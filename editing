@@ -12,7 +12,7 @@
 """ E D I T I N G   O P T I O N S
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 syntax on       " turn on syntax highlighting
-set number      " show line numbers
+"set number      " show line numbers
 set showbreak=+ " display a + at the beginning of a wrapped line
 set showmatch   " flash the matching bracket on inserting a )]} etc
 
@@ -23,17 +23,17 @@ set backspace=indent,eol,start
 """        that I'm just missing something
 "set cindent    " c-style language indentation
 "set autoindent " automatically indent new lines
-"set smartindent " automatically indent new lines
+set smartindent " automatically indent new lines
 
 " for most code, use 4 space indents. specific filetypes are overridden
 " in filetypes.vimrc
-set softtabstop=4 " most of the time, we want a softtabstop of 4
-set shiftwidth=4  " shift by 4 spaces when using >> and <<, etc
+set softtabstop=2 " most of the time, we want a softtabstop of 4
+set shiftwidth=2  " shift by 4 spaces when using >> and <<, etc
 set expandtab     " no tabs, just spaces kthx.
 
 " Using autocmd for this allows it to be reset every time you open a
 " file, which keeps overrides from being persistent
-autocmd FileType * set softtabstop=4 shiftwidth=4 expandtab
+autocmd FileType * set softtabstop=2 shiftwidth=2 expandtab
 
 set list                     " show whitespace
 set listchars=tab:»·,trail:· " show tabs and trailing spaces

@@ -28,3 +28,5 @@ source $HOME/.vim/filetypes
 if has("gui_running")
     source $HOME/.vim/gui
 endif
+
+au FileType * setl fo-=cro

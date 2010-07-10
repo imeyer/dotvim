@@ -20,12 +20,13 @@ namespace :update do
 
   BUNDLES = {
     # plugins
-    :bufexplorer   => "http://www.vim.org/scripts/download_script.php?src_id=12363",
+    :bufexplorer   => "http://www.vim.org/scripts/download_script.php?src_id=12904",
     :nerdcommenter => "git://github.com/scrooloose/nerdcommenter.git",
     :nerdtree      => "git://github.com/scrooloose/nerdtree.git",
     :surround      => "git://github.com/tpope/vim-surround.git",
     :tabular       => "git://github.com/godlygeek/tabular",
     :taglist       => "http://www.vim.org/scripts/download_script.php?src_id=7701",
+    :git_vim       => "git://github.com/motemen/git-vim.git",
 
     # syntax definitions
     :syntax_cucumber  => "git://github.com/tpope/vim-cucumber.git",
@@ -34,7 +35,6 @@ namespace :update do
     :syntax_rdoc      => "git://github.com/hallison/vim-rdoc.git",
     :syntax_slidedown => "git://github.com/bleything/vim-slidedown.git",
     :syntax_textile   => "git://github.com/timcharper/textile.vim.git",
-    :syntax_twiki     => "http://www.vim.org/scripts/download_script.php?src_id=6460",
   }
 
   desc "update any bundles defined in the Rakefile"
@@ -58,7 +58,7 @@ namespace :update do
         rm_rf target_path + '.git'
       when 'http'
         mkdir_p target_path
-        sh "cd #{target_path} && curl -s '#{location}' | tar zx -"
+        sh "cd #{target_path} && curl -s '#{location}' > /tmp/#{bundle} && unzip /tmp/#{bundle}"
       end
 
       docdir = target_path + 'doc'

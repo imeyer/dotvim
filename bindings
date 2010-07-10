@@ -23,6 +23,7 @@ map <C-J> <C-W>j<C-W>_
 map <C-K> <C-W>k<C-W>_
 
 " quick buffer switching
+map <leader>b :buffers<CR>
 map <leader>[ :bprevious<CR>
 map <leader>] :bnext<CR>
 

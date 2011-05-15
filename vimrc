@@ -30,3 +30,4 @@ if has("gui_running")
 endif
 
 au FileType * setl fo-=cro
+set paste
